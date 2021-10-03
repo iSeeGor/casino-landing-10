@@ -1,0 +1,100 @@
+.tabs {
+
+	&__body {
+
+		position: relative;
+		z-index: 1;
+	}
+
+	&__content {
+
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+		display: none;
+
+		@media (max-width: 1199.98px){
+			
+			gap: 20px;
+		}
+
+		@media (max-width: 480px){
+			
+			gap: 16px;
+		}
+
+		@media (max-width: 374px){
+			
+			gap: 10px;
+		}
+
+
+		&.active {
+
+			display: grid;
+		}
+	}
+}
+
+@media (max-width: 1199.98px){
+	
+
+}
+
+@media (max-width: 991.98px){
+
+	.tabs {
+
+
+		&__content {
+
+			gap: 20px;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+	
+}
+
+@media (max-width: 767.98px){
+	.tabs {
+
+		&__content {
+
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+		}
+	}
+}
+
+@media (max-width: 575.98px){
+	
+	.tabs {
+
+	}
+}
+
+@media (max-width: 480.98px){
+	
+	.tabs {
+
+
+	}
+}
+
+@media (max-width: 374px){
+	
+	.tabs {
+
+
+	}
+}
+
+@media (max-width: 350px){
+	
+	.tabs {
+
+		&__content {
+
+			gap: 14px;
+		}
+	}
+}

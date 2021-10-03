@@ -1,0 +1,223 @@
+.game-card {
+
+	--border-radius: 10px;
+
+	@media (max-width: 1199.98px){
+		--border-radius: 9px;
+	}
+
+	@media (max-width: 991.98px){
+		--border-radius: 8px;
+	}
+
+	@media (max-width: 767.98px){
+		--border-radius: 7px;
+	}
+
+	@media (max-width: 575.98px){
+		--border-radius: 6px;
+	}
+
+	@media (max-width: 480.98px){
+		--border-radius: 5px;
+	}
+
+	@media (max-width: 374.98px){
+		--border-radius: 4px;
+	}
+
+	$this: &;
+
+	position: relative;
+	padding-top: 75%;
+	overflow: hidden;
+	
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+	filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+	
+
+	&__image {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		
+
+		&::before,
+		&::after {
+
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #070707;
+			opacity: 0;
+			pointer-events: none;
+			transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+			border-radius: var(--border-radius);
+		}
+
+		&::after {
+
+			opacity: 1;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+			background: transparent;
+		} 
+
+		img {
+
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__button {
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+		opacity: 0;
+		z-index: 2;
+		transition: opacity 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+		text-transform: uppercase;
+		max-width: 60%;
+		font-size: 16px;
+		height: 50px;
+		padding-top: 2px;
+	}
+
+	&:hover {
+
+		box-shadow: 0px 4.04338px 10.1084px rgba(0, 0, 0, 0.5), 
+					inset 0px 2.02169px 0px rgba(255, 255, 255, 0.2);
+
+		#{$this}__image {
+
+			&::before {
+
+				opacity: 1;
+				background: rgba(7, 7, 7, 0.7);
+				box-shadow: inset 0 0 0 2px $colorLink;
+			}
+		}
+
+		#{$this}__button {
+
+			opacity: 1;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+@media (max-width: 1199.98px){
+	
+	.game-card {
+
+		&__button {
+
+			font-size: 16px;
+			height: 48px;
+			padding-top: 2px;
+		}
+	}
+}
+
+@media (max-width: 991.98px){
+
+	.game-card {
+
+
+		&__button {
+
+			font-size: 16px;
+			height: 46px;
+			padding-top: 2px;
+			width: 58%;
+		}
+	}
+	
+}
+
+@media (max-width: 767.98px){
+
+	.game-card {
+
+
+		&__button {
+
+			font-size: 16px;
+			height: 46px;
+			padding-top: 2px;
+			width: 55%;
+		}
+	}
+	
+}
+
+@media (max-width: 575.98px){
+	.game-card {
+
+
+		&__button {
+
+			font-size: 14px;
+			height: 42px;
+			padding-top: 2px;
+			width: 55%;
+		}
+	}
+}
+
+@media (max-width: 480.98px){
+
+	.game-card {
+
+
+		&__button {
+
+			font-size: 14px;
+			height: 40px;
+			padding-top: 2px;
+			width: 60%;
+		}
+	}
+	
+}
+
+@media (max-width: 374px){
+
+	.game-card {
+
+
+		&__button {
+
+			font-size: 12px;
+			height: 38px;
+			padding-top: 1px;
+			width: 60%;
+		}
+	}
+	
+}
+
+@media (max-width: 350px){
+	
+	.game-card {
+
+
+		&__button {
+
+			font-size: 11px;
+			height: 32px;
+			padding-top: 1px;
+		}
+	}
+}
